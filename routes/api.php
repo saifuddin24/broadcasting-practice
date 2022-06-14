@@ -17,3 +17,13 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::post("/event/message", function ( Request $request){
+    if( $request->message ) {
+        event( new \App\Events\MessageNotification(
+                \Carbon\Carbon::now()->addHours(6)->format('h:i:sa') . ': '. $request->message )
+        );
+        return [ 'success' => true ];
+    }
+    return [ 'success' => false ];
+});

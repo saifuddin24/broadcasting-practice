@@ -14,11 +14,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('layouts.app');
+    return view('welcome');
 });
 
-Route::get("/event/{message}", function ( $message ){
-    event( new \App\Events\MessageNotification(
-        \Carbon\Carbon::now()->addHours(6)->format('h:i:sa') . ': '. $message )
-    );
-});
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');

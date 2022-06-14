@@ -31,7 +31,7 @@ Artisan::command(
 Artisan::command('se', function () use ( $outputBuffer ) {
 
     Artisan::call('serve',[
-        '--port'  =>  8555,
+        '--port'  =>  8586,
         '--host'  =>  gethostbyname(trim(`hostname`))
     ], $outputBuffer );
 

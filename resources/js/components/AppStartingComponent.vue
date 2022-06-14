@@ -1,16 +1,15 @@
 <template>
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header">Example Component</div>
 
-                    <div class="card-body bg-green-500" :class="mclass">
-                        I'm an example component.<div>{{ message }}</div>
-                    </div>
-
-                </div>
+    <div class="bg-rose-800 w-full min-h-screen flex justify-center items-center" :class="mclass">
+        <div CLASS=" text-4xl text-white  flex flex-col">
+            <div>
+                <p v-for="message in messages" class="mb-2 block">{{message}}</p>
             </div>
+
+            <form class="flex" @submit.prevent="submitMessage">
+                <input type="text" class=" text-rose-600 border border-gray-500 p-4 w-full" v-model="submit_message">
+                <input type="submit"  value="Submit" class="bg-green-500 p-4 border cursor-pointer">
+            </form>
         </div>
     </div>
 </template>
@@ -19,8 +18,17 @@
     export default {
         data(){
             return {
-                message: '',
-                mclass :''
+                messages: [],
+                mclass :'',
+                submit_message: ''
+            }
+        },
+        methods: {
+            submitMessage(){
+                axios.post('http://192.168.1.105:8586/api/event/message', {
+                    message: this.submit_message
+                })
+                    .then( () => this.submit_message = '');
             }
         },
         mounted() {
@@ -30,7 +38,7 @@
             Echo.channel('notification')
                 .listen('MessageNotification', (e ,r) => {
                     console.log( 'MESSAGE: ',e ,r);
-                    this.message = "Message by PUSHER " + e.message;
+                    this.messages.push(e.message);
                     this.mclass = ' bg-red-600'
                 });
         }

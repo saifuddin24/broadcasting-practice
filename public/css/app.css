@@ -428,6 +428,12 @@ Ensure the default browser behavior of the `hidden` attribute.
 .-mt-px{
   margin-top: -1px;
 }
+.mb-2{
+  margin-bottom: 0.5rem;
+}
+.block{
+  display: block;
+}
 .flex{
   display: flex;
 }
@@ -458,11 +464,20 @@ Ensure the default browser behavior of the `hidden` attribute.
 .w-auto{
   width: auto;
 }
+.w-full{
+  width: 100%;
+}
 .max-w-6xl{
   max-width: 72rem;
 }
+.cursor-pointer{
+  cursor: pointer;
+}
 .grid-cols-1{
   grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+.flex-col{
+  flex-direction: column;
 }
 .items-center{
   align-items: center;
@@ -473,12 +488,19 @@ Ensure the default browser behavior of the `hidden` attribute.
 .overflow-hidden{
   overflow: hidden;
 }
+.border{
+  border-width: 1px;
+}
 .border-t{
   border-top-width: 1px;
 }
 .border-gray-200{
   --tw-border-opacity: 1;
   border-color: rgb(229 231 235 / var(--tw-border-opacity));
+}
+.border-gray-500{
+  --tw-border-opacity: 1;
+  border-color: rgb(107 114 128 / var(--tw-border-opacity));
 }
 .bg-white{
   --tw-bg-opacity: 1;
@@ -496,8 +518,19 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-bg-opacity: 1;
   background-color: rgb(220 38 38 / var(--tw-bg-opacity));
 }
+.bg-rose-800{
+  --tw-bg-opacity: 1;
+  background-color: rgb(159 18 57 / var(--tw-bg-opacity));
+}
+.bg-rose-500{
+  --tw-bg-opacity: 1;
+  background-color: rgb(244 63 94 / var(--tw-bg-opacity));
+}
 .p-6{
   padding: 1.5rem;
+}
+.p-4{
+  padding: 1rem;
 }
 .py-4{
   padding-top: 1rem;
@@ -520,6 +553,14 @@ Ensure the default browser behavior of the `hidden` attribute.
 .text-lg{
   font-size: 1.125rem;
   line-height: 1.75rem;
+}
+.text-2xl{
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+.text-4xl{
+  font-size: 2.25rem;
+  line-height: 2.5rem;
 }
 .font-semibold{
   font-weight: 600;
@@ -554,6 +595,14 @@ Ensure the default browser behavior of the `hidden` attribute.
 .text-gray-900{
   --tw-text-opacity: 1;
   color: rgb(17 24 39 / var(--tw-text-opacity));
+}
+.text-white{
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+.text-rose-600{
+  --tw-text-opacity: 1;
+  color: rgb(225 29 72 / var(--tw-text-opacity));
 }
 .underline{
   -webkit-text-decoration-line: underline;
