@@ -2,10 +2,5 @@
 <project version="4">
   <component name="LaravelQuerySettings">
     <option name="filterDataSources" value="true" />
-    <option name="filteredDataSources">
-      <set>
-        <option value="56418522-22d9-43da-898a-c8bf5d874c36&lt;-/lq/-&gt;miu" />
-      </set>
-    </option>
   </component>
 </project>
