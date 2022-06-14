@@ -2,6 +2,9 @@
 
 namespace Database\Seeders;
 
+
+use App\Models\User;
+use App\Models\UserRole;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -13,6 +16,12 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+        UserRole::factory(5)->create();
+
+        UserRole::query()->get()->each(function ( $userRole ){
+            User::factory(3)->create(['user_role_id' => $userRole->id ]);
+        });
+
+
     }
 }
